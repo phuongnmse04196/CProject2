@@ -66,3 +66,37 @@ C:\Users\Recett\Documents\Visual Studio 2015\Projects\Project\Project\obj\Debug\
 C:\Users\Recett\Documents\Visual Studio 2015\Projects\Project\Project\obj\Debug\Project.csprojResolveAssemblyReference.cache
 C:\Users\Recett\Documents\Visual Studio 2015\Projects\Project\Project\obj\Debug\Project.dll
 C:\Users\Recett\Documents\Visual Studio 2015\Projects\Project\Project\obj\Debug\Project.pdb
+E:\Study\PRN292\Project\trunk\Project\Project\bin\ApplicationInsights.config
+E:\Study\PRN292\Project\trunk\Project\Project\bin\Project.dll.config
+E:\Study\PRN292\Project\trunk\Project\Project\bin\Project.dll
+E:\Study\PRN292\Project\trunk\Project\Project\bin\Project.pdb
+E:\Study\PRN292\Project\trunk\Project\Project\bin\Microsoft.AI.Agent.Intercept.dll
+E:\Study\PRN292\Project\trunk\Project\Project\bin\Microsoft.AI.DependencyCollector.dll
+E:\Study\PRN292\Project\trunk\Project\Project\bin\Microsoft.AI.PerfCounterCollector.dll
+E:\Study\PRN292\Project\trunk\Project\Project\bin\Microsoft.AI.ServerTelemetryChannel.dll
+E:\Study\PRN292\Project\trunk\Project\Project\bin\Microsoft.AI.Web.dll
+E:\Study\PRN292\Project\trunk\Project\Project\bin\Microsoft.AI.WindowsServer.dll
+E:\Study\PRN292\Project\trunk\Project\Project\bin\Microsoft.ApplicationInsights.dll
+E:\Study\PRN292\Project\trunk\Project\Project\bin\Microsoft.Diagnostics.Tracing.EventSource.dll
+E:\Study\PRN292\Project\trunk\Project\Project\bin\Microsoft.Threading.Tasks.dll
+E:\Study\PRN292\Project\trunk\Project\Project\bin\Microsoft.Threading.Tasks.Extensions.Desktop.dll
+E:\Study\PRN292\Project\trunk\Project\Project\bin\Microsoft.Threading.Tasks.Extensions.dll
+E:\Study\PRN292\Project\trunk\Project\Project\bin\System.IO.dll
+E:\Study\PRN292\Project\trunk\Project\Project\bin\System.Runtime.dll
+E:\Study\PRN292\Project\trunk\Project\Project\bin\System.Threading.Tasks.dll
+E:\Study\PRN292\Project\trunk\Project\Project\bin\Microsoft.AI.DependencyCollector.xml
+E:\Study\PRN292\Project\trunk\Project\Project\bin\Microsoft.AI.ServerTelemetryChannel.xml
+E:\Study\PRN292\Project\trunk\Project\Project\bin\Microsoft.AI.Web.xml
+E:\Study\PRN292\Project\trunk\Project\Project\bin\Microsoft.AI.WindowsServer.xml
+E:\Study\PRN292\Project\trunk\Project\Project\bin\Microsoft.ApplicationInsights.xml
+E:\Study\PRN292\Project\trunk\Project\Project\bin\Microsoft.Diagnostics.Tracing.EventSource.xml
+E:\Study\PRN292\Project\trunk\Project\Project\bin\Microsoft.Threading.Tasks.xml
+E:\Study\PRN292\Project\trunk\Project\Project\bin\Microsoft.Threading.Tasks.Extensions.xml
+E:\Study\PRN292\Project\trunk\Project\Project\bin\Microsoft.Threading.Tasks.Extensions.Desktop.xml
+E:\Study\PRN292\Project\trunk\Project\Project\bin\System.IO.xml
+E:\Study\PRN292\Project\trunk\Project\Project\bin\System.Runtime.xml
+E:\Study\PRN292\Project\trunk\Project\Project\bin\System.Threading.Tasks.xml
+E:\Study\PRN292\Project\trunk\Project\Project\obj\Debug\Project.csproj.App.config
+E:\Study\PRN292\Project\trunk\Project\Project\obj\Debug\Project.csprojResolveAssemblyReference.cache
+E:\Study\PRN292\Project\trunk\Project\Project\obj\Debug\Project.dll
+E:\Study\PRN292\Project\trunk\Project\Project\obj\Debug\Project.pdb

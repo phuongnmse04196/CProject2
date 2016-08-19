@@ -46,7 +46,7 @@
         <div class="login-form">
             <h1>Member Login</h1>
             <div class="head">
-                <img src="images/user.png" alt="">
+                <img src="../images/user.png" alt="">
             </div>
             <form id="form1" runat="server" action="" method="POST">
                 
