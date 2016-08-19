@@ -5,10 +5,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Project</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway" />
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" />
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <style>
         html, body, h1, h2, h3, h4, h5 {
@@ -66,7 +66,7 @@
             </asp:ContentPlaceHolder>
 
             <!-- Footer -->
-            <footer class="w3-container w3-padding-32 w3-white my-footer-style">
+            <footer class="w3-container w3-padding-32 w3-white">
                 <div class="w3-row-padding">
                     <h3>CREATED BY</h3>
                     <h4><a href="https://www.facebook.com/tranhong.quan.94" target="_blank">Tran Hong Quan</a></h4>
@@ -77,10 +77,14 @@
 
             <!-- End page content -->
         </div>
-
         <style type="text/css">
             .my-footer-style {
-                position: fixed; 
+                height: 170px;
+            }
+        </style>
+        <style type="text/css">
+            .my-footer-style {
+                position: absolute; 
                 bottom: 0; 
                 right: 0; 
                 width: calc(100% - 300px);
@@ -93,8 +97,10 @@
             }
         </style>
         
-
-        <script>
+    </form>
+    <script src="../../scripts/jquery-1.9.1.min.js"></script>
+    <script src="../../scripts/bootstrap.min.js"></script>
+    <script>
             // Script to open and close sidenav
             function w3_open() {
                 document.getElementById("mySidenav").style.display = "block";
@@ -105,9 +111,18 @@
                 document.getElementById("mySidenav").style.display = "none";
                 document.getElementById("myOverlay").style.display = "none";
             }
+
+            $(document).ready(function () {
+                if (($('.caculate-footer').height() + 400) < $(window).height()) {
+                    console.log("true");
+                    console.log($(window).height());
+                    console.log($('#caculate-footer').height() + 400);
+                    $('footer').addClass('my-footer-style');
+                }
+                else {
+                    $('footer').removeClass('my-footer-style');
+                }
+            });
         </script>
-    </form>
-    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
-    <script src="~/Scripts/bootstrap.min.js"></script>
 </body>
 </html>

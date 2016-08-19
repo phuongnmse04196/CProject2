@@ -10,7 +10,7 @@
 namespace Project.web.Admin {
     
     
-    public partial class Display {
+    public partial class UpdateRoomPrice {
         
         /// <summary>
         /// drHotel control.
@@ -31,40 +31,40 @@ namespace Project.web.Admin {
         protected global::System.Web.UI.WebControls.DropDownList drRoomType;
         
         /// <summary>
-        /// txtCheckIn control.
+        /// drRoom control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCheckIn;
+        protected global::System.Web.UI.WebControls.DropDownList drRoom;
         
         /// <summary>
-        /// txtCheckOut control.
+        /// txtOldPrice control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCheckOut;
+        protected global::System.Web.UI.WebControls.TextBox txtOldPrice;
         
         /// <summary>
-        /// btnView control.
+        /// txtNewPrice control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnView;
+        protected global::System.Web.UI.WebControls.TextBox txtNewPrice;
         
         /// <summary>
-        /// GridView1 control.
+        /// btnSave control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
+        protected global::System.Web.UI.WebControls.Button btnSave;
         
         /// <summary>
         /// btnClose control.

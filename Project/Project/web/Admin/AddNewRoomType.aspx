@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/web/Admin/Admin.Master" AutoEventWireup="true" CodeBehind="AddNewRoomType.aspx.cs" Inherits="Project.web.Admin.AddNewRoom" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="row" style="padding: 25px 0px; text-align: center; font-weight: 700;">
+    <div class="row caculate-footer" style="padding: 25px 0px; text-align: center; font-weight: 700;">
         <h2>Enter infomation of Room type</h2>
     </div>
     <div class="row" style="padding: 25px 0px">

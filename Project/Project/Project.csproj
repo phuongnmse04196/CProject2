@@ -129,6 +129,7 @@
     <Content Include="css\style.css" />
     <Content Include="CustomerHome.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="web\Admin\UpdateRoomPrice.aspx" />
     <Content Include="web\Login.aspx" />
     <Content Include="scripts\ai.0.22.19-build00125.js" />
     <Content Include="scripts\ai.0.22.19-build00125.min.js" />
@@ -204,6 +205,13 @@
     </Compile>
     <Compile Include="CustomerHome.aspx.designer.cs">
       <DependentUpon>CustomerHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\Admin\UpdateRoomPrice.aspx.cs">
+      <DependentUpon>UpdateRoomPrice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\Admin\UpdateRoomPrice.aspx.designer.cs">
+      <DependentUpon>UpdateRoomPrice.aspx</DependentUpon>
     </Compile>
     <Compile Include="web\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>

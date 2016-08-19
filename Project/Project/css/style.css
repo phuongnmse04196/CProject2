@@ -318,7 +318,7 @@ input[type="submit"]{
 	-o-transition: 0.5s;
 	-ms-transition: 0.5s;
     margin-left: 0px;
-    width: 350px;
+    width: 100%;
 }
 input[type="submit"]:hover{
 	background:#128A42;
@@ -933,6 +933,5 @@ input[type="submit"]:hover{
 	}
 	input[type="submit"] {
 	padding: 4%;
-	}
-		
+	}	
 }
