@@ -67,6 +67,24 @@ namespace Project {
         protected global::System.Web.UI.WebControls.DropDownList drRoomType;
         
         /// <summary>
+        /// txtCheckIn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtCheckIn;
+        
+        /// <summary>
+        /// txtCheckOut control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtCheckOut;
+        
+        /// <summary>
         /// btnView control.
         /// </summary>
         /// <remarks>
