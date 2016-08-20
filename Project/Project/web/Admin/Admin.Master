@@ -87,7 +87,7 @@
                 position: absolute; 
                 bottom: 0; 
                 right: 0; 
-                width: calc(100% - 300px);
+                width: calc(100% - 250px);
             }
             @media(max-width: 992px)
             {

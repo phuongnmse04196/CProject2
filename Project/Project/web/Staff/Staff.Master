@@ -22,9 +22,10 @@
 </head>
 <body class="w3-light-grey w3-content" style="max-width: 1600px">
     <form id="form1" runat="server">
-        
+        <script src="../../scripts/jquery-1.9.1.min.js"></script>
+        <script src="../../scripts/bootstrap.min.js"></script>
         <!-- Sidenav/menu -->
-        <nav class="w3-sidenav w3-collapse w3-white w3-animate-left" style="z-index: 3; width: 300px;" id="mySidenav" >
+        <nav class="w3-sidenav w3-collapse w3-white w3-animate-left" style="z-index: 3; width: 250px;" id="mySidenav" >
             <br>
             <div class="w3-container" >
                 <a href="#" onclick="w3_close()" class="w3-hide-large w3-right w3-jumbo w3-padding" title="close menu">
@@ -46,13 +47,13 @@
         <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor: pointer" title="close side menu" id="myOverlay"></div>
 
         <!-- !PAGE CONTENT! -->
-        <div class="w3-main" style="margin-left: 300px">
+        <div class="w3-main" style="margin-left: 250px">
 
             <!-- Header -->
-            <header class="w3-container" style="background-color: black; height: 100px">
-                <a href="#">
+            <header class="w3-container class-header" >
+                <%--<a href="#">
                     <img src="img_avatar_g2.jpg" style="width: 65px;" class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity"></a>
-                <span class="w3-opennav w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="w3_open()"><i class="fa fa-bars"></i></span>
+                <%--<span class="w3-opennav w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="w3_open()"><i class="fa fa-bars"></i></span>--%>
                 <h1 style="text-align: center; color: aliceblue"><b>MANAGE HOTEL</b></h1>
 
             </header>
@@ -64,7 +65,7 @@
             </asp:ContentPlaceHolder>
 
             <!-- Footer -->
-            <footer class="w3-container w3-padding-32 w3-white my-footer-style">
+            <footer class="w3-container w3-padding-32 w3-white" style="padding-top: 5px !important; padding-bottom: 10px !important;">
                 <div class="w3-row-padding">
                     <h3>CREATED BY</h3>
                     <h4><a href="https://www.facebook.com/tranhong.quan.94" target="_blank">Tran Hong Quan</a></h4>
@@ -76,11 +77,26 @@
             <!-- End page content -->
         </div>
         <style type="text/css">
+            .class-header {
+                background-color: black; 
+                height: 100px;
+                width: 100%;
+            }
             .my-footer-style {
-                height: 170px;
+                position: absolute; 
+                bottom: 0; 
+                right: 0; 
+                width: calc(100% - 250px);
+             
+            }
+            @media(max-width: 992px)
+            {
+                .my-footer-style{
+                    width: 100%;
+                }
             }
         </style>
-
+        
         <script>
             // Script to open and close sidenav
             function w3_open() {
@@ -94,10 +110,11 @@
             }
 
             $(document).ready(function () {
-                if (($('.caculate-footer').height() + 400) < $(window).height()) {
+                if (($('.caculate-footer').height() + 100 + 150) < $(window).height()) {
                     console.log("true");
                     console.log($(window).height());
-                    console.log($('#caculate-footer').height() + 400);
+                    console.log($('.caculate-footer').height());
+                    console.log($('.caculate-footer').height() + 250);
                     $('footer').addClass('my-footer-style');
                 }
                 else {
@@ -106,7 +123,6 @@
             });
         </script>
     </form>
-    <script src="../../scripts/jquery-1.9.1.min.js"></script>
-    <script src="../../scripts/bootstrap.min.js"></script>
+    
 </body>
 </html>
