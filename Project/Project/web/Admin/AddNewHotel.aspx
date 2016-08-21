@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/web/Admin/Admin.Master" AutoEventWireup="true" CodeBehind="AddNewHotel.aspx.cs" Inherits="Project.web.Admin.AddNewHotel" %>
+﻿<%@ Page Title="AddNewHotel" Language="C#" MasterPageFile="~/web/Admin/Admin.Master" AutoEventWireup="true" CodeBehind="AddNewHotel.aspx.cs" Inherits="Project.web.Admin.AddNewHotel" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="caculate-footer">
@@ -35,7 +35,7 @@
         </div>
         <div class="row" style="padding: 25px 0px">
             <div class="col-md-2 col-md-offset-4">
-                <asp:Button ID="btnSave" CssClass="btn-style" runat="server" Text="Save" />
+                <asp:Button ID="btnSave" CssClass="btn-style" runat="server" Text="Save" OnClick="btnSave_Click" />
             </div>
             <div class="col-md-2">
                 <asp:Button ID="btnClose" CssClass="btn-style" runat="server" Text="Close" />

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Project.BO;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -18,11 +19,24 @@ namespace Project
         protected void Button1_Click(object sender, EventArgs e)
         {
             da.openConnection();
-            bool x = da.login(txtUser.Text, txtPass.Text, true);
-            if (x)
+            if (string.IsNullOrEmpty(txtUser.Text) || string.IsNullOrEmpty(txtPass.Text))
+            {
+                MessageBox.Show(this, "All field must not be empty");
+                return;
+            }
+            Account x = da.login(txtUser.Text, txtPass.Text);
+            if (x != null)
             {
                 Session["username"] = txtUser.Text;
-                Session["role"] = true;
+                Session["role"] = x.role;
+                if (x.role)
+                {
+                    Response.Redirect("Admin/AdminHome.aspx");
+                }
+                else
+                {
+                    Response.Redirect("Staff/StaffHome.aspx");
+                }
             }
             else
             {

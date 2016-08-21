@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Project.DA;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,6 +13,26 @@ namespace Project.web.Staff
         protected void Page_Load(object sender, EventArgs e)
         {
 
+        }
+
+        protected void btnSave_Click(object sender, EventArgs e)
+        {
+            StaffDataAccess sda = new StaffDataAccess();
+            sda.openConnection();
+            if (string.IsNullOrEmpty(txtName.Text) || string.IsNullOrEmpty(txtAddress.Text) || string.IsNullOrEmpty(txtCode.Text))
+            {
+                MessageBox.Show(this, "All text cannot null");
+                return;
+            }
+            try
+            {
+                sda.AddCustomer(txtCode.Text, txtName.Text, txtAddress.Text);
+                MessageBox.Show(this, "New Customer has been added");
+            }
+            catch
+            {
+                MessageBox.Show(this, "Customer already exist");
+            }
         }
     }
 }

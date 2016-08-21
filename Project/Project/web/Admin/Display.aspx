@@ -33,7 +33,7 @@
             </div>
             <div class="row" style="margin-top: 10px;">
                 <div class="col-sm-4 div-for-lb">
-                    <label for="txtCheckOut" class="lbFormInHotel">Check in</label>
+                    <label for="txtCheckOut" class="lbFormInHotel">Check out</label>
                 </div>
                 <div class="col-sm-6">
                     <asp:TextBox type="date" ID="txtCheckOut" CssClass="txtFormInHotel" runat="server" ></asp:TextBox>
@@ -43,7 +43,7 @@
         <div class="col-sm-12">
             <div class="row" style="margin-top: 10px">
                 <div class="col-md-2 col-md-offset-1" style="text-align: left">
-                    <asp:Button ID="btnView"  CssClass="btn-style" runat="server" Text="View revenue" />
+                    <asp:Button ID="btnView"  CssClass="btn-style" runat="server" Text="View revenue" OnClick="btnView_Click" />
                 </div>
             </div>
         </div>

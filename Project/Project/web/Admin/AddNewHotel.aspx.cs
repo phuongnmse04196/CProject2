@@ -13,5 +13,26 @@ namespace Project.web.Admin
         {
 
         }
+
+        AdminDatabaseAccess adm = new AdminDatabaseAccess();
+        protected void btnSave_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtName.Text) || string.IsNullOrEmpty(txtAddress.Text) || string.IsNullOrEmpty(txtCode.Text))
+            {
+                MessageBox.Show(this, "All field must not be empty");
+                return;
+            }
+            try
+            {
+                adm.openConnection();
+                adm.AddNewHotel(txtCode.Text, txtName.Text, txtAddress.Text);
+                MessageBox.Show(this, "Success");
+            }
+            catch
+            {
+                MessageBox.Show(this, "This hotel code already exist");
+            }
+
+        }
     }
 }

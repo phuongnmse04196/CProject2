@@ -15,10 +15,10 @@
             </div>
             <div class="row" style="margin-top: 10px;">
                 <div class="col-sm-4 div-for-lb">
-                    <label for="txtAddress" class="lbFormInUser">Address</label>
+                    <label for="txtAddress" class="lbFormInUser">Password</label>
                 </div>
                 <div class="col-sm-6">
-                    <asp:TextBox ID="txtAddress" runat="server" CssClass="txtFormInUser"  placeholder="Input Address here"></asp:TextBox>
+                    <asp:TextBox ID="txtPassword" runat="server" CssClass="txtFormInUser"  placeholder="Input Address here"></asp:TextBox>
                 </div>
             </div>
         </div>
@@ -33,7 +33,7 @@
     </div>
     <div class="row" style="padding: 25px 0px">
         <div class="col-md-2 col-md-offset-4">
-            <asp:Button ID="btnSave"  CssClass="btn-style" runat="server" Text="Save" />
+            <asp:Button ID="btnSave"  CssClass="btn-style" runat="server" Text="Save" OnClick="btnSave_Click" />
         </div>
         <div class="col-md-2">
             <asp:Button ID="btnClose"  CssClass="btn-style" runat="server" Text="Close" />

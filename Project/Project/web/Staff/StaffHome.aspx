@@ -26,10 +26,10 @@
                 </div>
                 <div class="col-md-4">
                     <div class="row" style="margin-top: 10px;">
-                        <asp:Button ID="btnSearch" CssClass="btn-style" runat="server" Text="Search" />
+                        <asp:Button ID="btnSearch" CssClass="btn-style" runat="server" Text="Search" OnClick="btnSearch_Click" />
                     </div>
                     <div class="row" style="margin-top: 10px;">
-                        <asp:Button ID="btnCreate" CssClass="btn-style" runat="server" Text="Create new customer" />
+                        <asp:Button ID="btnCreate" CssClass="btn-style" runat="server" Text="Create new customer" OnClick="btnCreate_Click" />
                     </div>
                 </div>
             </div>
@@ -66,7 +66,7 @@
                     </div>
                     <div class="row" style="margin-top: 10px;">
                         <div class="col-sm-4 div-for-lb">
-                            <label for="txtCheckOut" class="lbFormInHotel">Check in</label>
+                            <label for="txtCheckOut" class="lbFormInHotel">Check out</label>
                         </div>
                         <div class="col-sm-6">
                             <asp:TextBox type="date" ID="txtCheckOut" CssClass="txtFormInHotel" runat="server"></asp:TextBox>
@@ -76,25 +76,26 @@
 
                     <div class="row" style="margin-top: 10px;">
                         <div class="col-md-6 col-md-offset-4">
-                            <asp:Button ID="btnView" CssClass="btn-style" runat="server" Text="View available rooms" />
+                            <asp:Button ID="btnView" CssClass="btn-style" runat="server" Text="View available rooms" OnClick="btnView_Click" />
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="row" style="margin-top: 10px;">
-                        <asp:GridView ID="GridView1" runat="server" CssClass="gvFormInHotel"></asp:GridView>
+                        <asp:ListBox ID="ListBox1" runat="server" Height="94px" Width="466px"></asp:ListBox>
                     </div>
                 </div>
             </div>
         </div>
         <div class="row" style="margin-top: 10px;">
             <div class="col-md-4 col-md-offset-1">
-                <asp:Button ID="btnBook" CssClass="btn-style" runat="server" Text="Book" />
+                <asp:Button ID="btnBook" CssClass="btn-style" runat="server" Text="Book" OnClick="btnBook_Click" />
             </div>
         </div>
         <div class="row" style="margin-top: 10px;">
             <div class="col-md-9 col-md-offset-1">
-                <asp:GridView ID="GridView2" runat="server" CssClass="gvFormInHotel"></asp:GridView>
+                <asp:GridView ID="GridView2" runat="server" CssClass="gvFormInHotel" AutoGenerateColumns="False">
+                </asp:GridView>
             </div>
         </div>
         <div class="row" style="margin-top: 10px;">
@@ -106,7 +107,7 @@
         <div class="row" style="margin-top: 10px; margin-bottom: 20px;">
             <div class="col-md-6 col-md-offset-1">
                 <div class="col-md-6">
-                    <asp:Button ID="btnSave" CssClass="btn-style" runat="server" Text="Save" />
+                    <asp:Button ID="btnSave" CssClass="btn-style" runat="server" Text="Save" OnClick="btnSave_Click" />
                 </div>
                 <div class="col-md-6">
                     <asp:Button ID="btnClose" CssClass="btn-style" runat="server" Text="Close" />

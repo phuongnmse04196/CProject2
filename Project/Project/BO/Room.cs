@@ -9,7 +9,15 @@ namespace Project.BO
     {
         public string roomno { get; set; }
         public string hotelcode { get; set; }
-        public string typecode { get; set; }
+        public int typecode { get; set; }
         public double price { get; set; }
+
+        public Room(string roomno, string hotelcode, int typecode, double price)
+        {
+            this.roomno = roomno;
+            this.hotelcode = hotelcode;
+            this.typecode = typecode;
+            this.price = price;
+        }
     }
 }

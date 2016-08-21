@@ -36,11 +36,13 @@
                 <h4 class="w3-padding-0"><b>OPTIONS</b></h4>
 
             </div>
-            <a href="#" class="w3-padding w3-text-teal">HOME</a>
-            <a href="#" class="w3-padding">MANAGE STAFF</a>
-            <a href="#" class="w3-padding">BOOK A ROOM</a>
-            <a href="#" class="w3-padding">CUSTOMER LEVEL UP</a>
-            <a href="#" class="w3-padding">CONTACT</a>
+            <a href="AdminHome.aspx" class="w3-padding w3-text-teal">HOME</a>
+            <a href="AddNewStaff.aspx" class="w3-padding">ADD NEW STAFF</a>
+            <a href="AddNewHotel.aspx" class="w3-padding">ADD NEW HOTEL</a>
+            <a href="AddNewRoomType.aspx" class="w3-padding">ADD NEW ROOM TYPE</a>
+            <a href="AddNewRoom.aspx" class="w3-padding">ADD NEW ROOM</a>
+            <a href="UpdateRoomPrice.aspx" class="w3-padding">UPDATE ROOM PRICE</a>
+            <a href="Display.aspx" class="w3-padding">PRINT SUMMARY</a>
 
         </nav>
 

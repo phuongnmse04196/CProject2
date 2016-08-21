@@ -24,12 +24,12 @@
             </div>
             <div class="row" >
                 <div class="col-md-4 col-md-offset-1">
-                    <asp:Button ID="btnSearch" CssClass="btn-style" runat="server" Text="Search" />
+                    <asp:Button ID="btnSearch" CssClass="btn-style" runat="server" Text="Search" OnClick="btnSearch_Click" />
                 </div>
             </div>
             <div class="row" style="padding: 25px 0px">
                 <div class="col-md-10 col-md-offset-1">
-                    <asp:GridView ID="GridView1" runat="server"></asp:GridView>
+                    <asp:GridView ID="GridView1" runat="server" OnSelectedIndexChanged="GridView1_SelectedIndexChanged"></asp:GridView>
                 </div>
                 <div class="row">
                     <div class="col-md-5 col-md-offset-1">

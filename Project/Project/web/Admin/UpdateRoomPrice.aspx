@@ -10,7 +10,7 @@
                     <label for="drHotel" class="lbFormInHotel">Select Hotel</label>
                 </div>
                 <div class="col-sm-6">
-                    <asp:DropDownList ID="drHotel" runat="server" CssClass="drFormInHotel"></asp:DropDownList>
+                    <asp:DropDownList ID="drHotel" runat="server" CssClass="drFormInHotel" AutoPostBack="True" OnSelectedIndexChanged="drHotel_SelectedIndexChanged"></asp:DropDownList>
                 </div>
             </div> 
             <div class="row" style="margin-top: 10px;">
@@ -18,7 +18,7 @@
                     <label for="drRoomType" class="lbFormInHotel">Select Room Type</label>
                 </div>
                 <div class="col-sm-6">
-                    <asp:DropDownList ID="drRoomType" runat="server" CssClass="drFormInHotel"></asp:DropDownList>
+                    <asp:DropDownList ID="drRoomType" runat="server" CssClass="drFormInHotel" AutoPostBack="True" OnSelectedIndexChanged="drRoomType_SelectedIndexChanged"></asp:DropDownList>
                 </div>
             </div>
             <div class="row" style="margin-top: 10px;">
@@ -26,7 +26,7 @@
                     <label for="drRoom" class="lbFormInHotel">Select Room</label>
                 </div>
                 <div class="col-sm-6">
-                    <asp:DropDownList ID="drRoom" runat="server" CssClass="drFormInHotel"></asp:DropDownList>
+                    <asp:DropDownList ID="drRoom" runat="server" CssClass="drFormInHotel" OnSelectedIndexChanged="drRoom_SelectedIndexChanged" AutoPostBack="True"></asp:DropDownList>
                 </div>
             </div>
             <div class="row" style="margin-top: 10px;">
@@ -48,7 +48,7 @@
     </div>
     <div class="row" style="padding: 25px 0px">
         <div class="col-md-2 col-md-offset-4">
-            <asp:Button ID="btnSave"  CssClass="btn-style" runat="server" Text="Save" />
+            <asp:Button ID="btnSave"  CssClass="btn-style" runat="server" Text="Save" OnClick="btnSave_Click" />
         </div>
         <div class="col-md-2">
             <asp:Button ID="btnClose"  CssClass="btn-style" runat="server" Text="Close" />

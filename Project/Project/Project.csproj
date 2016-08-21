@@ -152,12 +152,17 @@
     <Content Include="scripts\jquery-1.9.1.js" />
     <Content Include="scripts\jquery-1.9.1.min.js" />
     <Content Include="web\Staff\StaffHome.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="web\Staff\Staff.Master" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BO\Booking.cs" />
     <Compile Include="BO\Hotel.cs" />
     <Compile Include="BO\Room.cs" />
+    <Compile Include="DA\AdminDatabaseAccess.cs" />
+    <Compile Include="DA\StaffDataAccess.cs" />
     <Compile Include="web\Admin\AddNewHotel.aspx.cs">
       <DependentUpon>AddNewHotel.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

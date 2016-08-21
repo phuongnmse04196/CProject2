@@ -17,7 +17,7 @@
     </div>
     <div class="row" style="padding: 25px 0px">
         <div class="col-md-2 col-md-offset-4">
-            <asp:Button ID="btnSave"  CssClass="btn-style" runat="server" Text="Save" />
+            <asp:Button ID="btnSave"  CssClass="btn-style" runat="server" Text="Save" OnClick="btnSave_Click" />
         </div>
         <div class="col-md-2">
             <asp:Button ID="btnClose"  CssClass="btn-style" runat="server" Text="Close" />

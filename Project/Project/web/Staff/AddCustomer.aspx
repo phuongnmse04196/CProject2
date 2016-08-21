@@ -38,7 +38,7 @@
                 <div class="col-md-6 col-md-offset-2">
                     <div class="col-md-6">
                         <div class="row" style="margin-top: 10px;">
-                            <asp:Button ID="btnSave" CssClass="btn-style" runat="server" Text="Save" />
+                            <asp:Button ID="btnSave" CssClass="btn-style" runat="server" Text="Save" OnClick="btnSave_Click" />
                         </div>
                     </div>
                     <div class="col-md-6">

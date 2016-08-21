@@ -11,14 +11,14 @@ namespace Project
 {
     public class DatabaseAccess
     {
-        SqlConnection myConnection;
+        protected SqlConnection myConnection;
         public void openConnection()
         {
             myConnection = new SqlConnection("user id=sa;" +
-                                       "password=sa;server=localhost;" +
+                                       "password=123456;server=localhost;" +
                                        "Trusted_Connection=yes;" +
                                        "database=HotelReservation; " +
-                                       "connection timeout=30");
+                                       "connection timeout=30; MultipleActiveResultSets=true");
             try
             {
                 myConnection.Open();
@@ -31,7 +31,7 @@ namespace Project
 
         
 
-        public bool login(string id, string password, bool authority)
+        public Account login(string id, string password)
         {
             SqlCommand myCommand = new SqlCommand("Select * from Login WHERE LoginId =  '" + id + "'", myConnection);
             SqlDataReader datareader = myCommand.ExecuteReader();
@@ -40,64 +40,37 @@ namespace Project
                 datareader.Read();
                 if (datareader["LoginPassword"].ToString().Equals(password))
                 {
-                    if ((bool)datareader["Roles"] == authority)
-                    {
-                        return true;
-                    }
+                    return new Account(datareader.GetString(0), datareader.GetString(1), datareader.GetBoolean(2));
                 }
             }
-            return false;
+            return null;
         }
 
-        public bool AddNewRoom(string roomtype)
-        {       
-            SqlCommand myCommand = new SqlCommand("Insert into roomtype values @type");
-            myCommand.Parameters.Add("@type", SqlDbType.NChar);
-            myCommand.Parameters["@type"].Value = roomtype;
-            myCommand.ExecuteNonQuery();
-            return false;
-        }
-
-        public bool AddNewHotel(string code, string name, string address)
+        public SqlDataReader getHotel()
         {
-
-            SqlCommand myCommand = new SqlCommand("Insert into Hotel values (@code, @name, @address)");
-            myCommand.Parameters.Add("@code", SqlDbType.NChar);
-            myCommand.Parameters["@code"].Value = code;
-            myCommand.Parameters.Add("@name", SqlDbType.NChar);
-            myCommand.Parameters["@name"].Value = name;
-            myCommand.Parameters.Add("@address", SqlDbType.NChar);
-            myCommand.Parameters["@address"].Value = address;
-            myCommand.ExecuteNonQuery();
-            return false;
+            SqlCommand myCommand = new SqlCommand("Select * from Hotel", myConnection);
+            SqlDataReader datareader = myCommand.ExecuteReader();
+            return datareader;
         }
 
-        public bool AddNewLogin(Account a)
+        public SqlDataReader getRoomType()
         {
-            SqlCommand myCommand = new SqlCommand("Insert into Login values (@id, @password, @role)");
-            myCommand.Parameters.Add("@id", SqlDbType.NChar);
-            myCommand.Parameters["@id"].Value = a.username;
-            myCommand.Parameters.Add("@password", SqlDbType.NChar);
-            myCommand.Parameters["@password"].Value = a.password;
-            myCommand.Parameters.Add("@role", SqlDbType.Bit);
-            myCommand.Parameters["@role"].Value = a.role;
-            myCommand.ExecuteNonQuery();
-            return false;
+            SqlCommand myCommand = new SqlCommand("Select * from RoomType", myConnection);
+            SqlDataReader datareader = myCommand.ExecuteReader();
+            return datareader;
         }
 
-        public bool AddNewRoom(Room r)
+        public decimal GetRoomPrice(string Roomno)
         {
-            SqlCommand myCommand = new SqlCommand("Insert into Room values (@roomno, @hotelcode, @typecode, @price)");
+            if (string.IsNullOrEmpty(Roomno))
+            {
+                return -1;
+            }
+            SqlCommand myCommand = new SqlCommand("Select Price from Room where roomno = @roomno", myConnection);
             myCommand.Parameters.Add("@roomno", SqlDbType.NChar);
-            myCommand.Parameters["@roomno"].Value = r.roomno;
-            myCommand.Parameters.Add("@hotelcode", SqlDbType.NChar);
-            myCommand.Parameters["@hotelcode"].Value = r.hotelcode;
-            myCommand.Parameters.Add("@typecode", SqlDbType.Bit);
-            myCommand.Parameters["@typecode"].Value = r.typecode;
-            myCommand.Parameters.Add("@price", SqlDbType.Money);
-            myCommand.Parameters["@price"].Value = r.price;
-            myCommand.ExecuteNonQuery();
-            return false;
+            myCommand.Parameters["@roomno"].Value = Roomno;
+            decimal a = (decimal)myCommand.ExecuteScalar();
+            return a;
         }
     }
 }
