@@ -11,7 +11,7 @@ namespace Project
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            lb1.Text = Session["username"].ToString().ToUpper();
         }
     }
 }

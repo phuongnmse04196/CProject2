@@ -109,6 +109,21 @@ namespace Project.DA
             command.Parameters.AddWithValue("@roomno", roomno);
             command.ExecuteNonQuery();
         }
-        
+        public void Checkout(string roomno)
+        {
+            SqlCommand command;
+            command = new SqlCommand("Update Room set busy = '0' where roomno = @roomno", myConnection);
+            command.Parameters.AddWithValue("@roomno", roomno);
+            command.ExecuteNonQuery();
+            command = new SqlCommand("Select code from BookingDetail where roomno = @roomno", myConnection);
+            command.Parameters.AddWithValue("@roomno", roomno);
+            int a = (int)command.ExecuteScalar();
+            command = new SqlCommand("Delete from BookingDetail where roomno = @roomno", myConnection);
+            command.Parameters.AddWithValue("@roomno", roomno);
+            command.ExecuteNonQuery();
+            command = new SqlCommand("Delete from Booking where code = @code", myConnection);
+            command.Parameters.AddWithValue("@code", a);
+            command.ExecuteNonQuery();
+        }
     }
 }

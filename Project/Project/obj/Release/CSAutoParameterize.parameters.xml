@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="HotelConnectionString-Web.config Connection String" description="HotelConnectionString Connection String used in web.config by the application to access the database." defaultValue="Data Source=tcp:orchids.database.windows.net,1433;Initial Catalog=HotelReservation;User ID=orchids@orchids;Password=123@123a;MultipleActiveResultSets=True;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="F:\\Project\\trunk\\Project\\Project\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='HotelConnectionString']/@connectionString" />
+  </parameter>
+</parameters>

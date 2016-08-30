@@ -12,7 +12,10 @@ namespace Project.web.Staff
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["role"] == null || (bool)Session["role"] != false)
+            {
+                Response.Redirect("../Login.aspx");
+            }
         }
 
         protected void btnSave_Click(object sender, EventArgs e)
@@ -33,6 +36,7 @@ namespace Project.web.Staff
             {
                 MessageBox.Show(this, "Customer already exist");
             }
+            sda.close();
         }
     }
 }

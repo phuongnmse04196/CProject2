@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
+using System.Web.Configuration;
 
 namespace Project
 {
@@ -14,11 +15,12 @@ namespace Project
         protected SqlConnection myConnection;
         public void openConnection()
         {
-            myConnection = new SqlConnection("user id=sa;" +
-                                       "password=123456;server=localhost;" +
-                                       "Trusted_Connection=yes;" +
-                                       "database=HotelReservation; " +
-                                       "connection timeout=30; MultipleActiveResultSets=true");
+            //myConnection = new SqlConnection("user id=sa;" +
+            //                           "password=123456;server=localhost;" +
+            //                           "Trusted_Connection=yes;" +
+            //                           "database=HotelReservation; " +
+            //                           "connection timeout=30; MultipleActiveResultSets=true");
+            myConnection = new SqlConnection(WebConfigurationManager.ConnectionStrings["HotelConnectionString"].ConnectionString);
             try
             {
                 myConnection.Open();
@@ -27,6 +29,11 @@ namespace Project
             {
                 Console.WriteLine(e.ToString());
             }
+        }
+
+        public void close()
+        {
+            myConnection.Close();
         }
 
         

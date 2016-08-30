@@ -116,7 +116,9 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="images\hotel.jpg" />
     <Content Include="images\user.png" />
+    <Content Include="WebForm1.aspx" />
     <Content Include="web\Admin\AddNewHotel.aspx" />
     <Content Include="web\Admin\AddNewRoom.aspx" />
     <Content Include="web\Admin\AddNewRoomType.aspx" />
@@ -127,9 +129,10 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="css\style.css" />
-    <Content Include="CustomerHome.aspx" />
+    <Content Include="web\Customer\CustomerHome.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="web\Admin\UpdateRoomPrice.aspx" />
+    <Content Include="web\Customer\Home.aspx" />
     <Content Include="web\Login.aspx" />
     <Content Include="scripts\ai.0.22.19-build00125.js" />
     <Content Include="scripts\ai.0.22.19-build00125.min.js" />
@@ -141,11 +144,18 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
-    <Content Include="Customer.Master" />
+    <Content Include="web\Customer\Customer.Master" />
     <Content Include="web\Admin\Display.aspx" />
     <Content Include="web\Staff\AddCustomer.aspx" />
+    <Content Include="web\Staff\Home.aspx" />
     <Content Include="web\Staff\Print.aspx" />
     <Content Include="web\Staff\UpdateStaff.aspx" />
+    <None Include="Properties\PublishProfiles\csharpproject %282%29.pubxml" />
+    <None Include="Properties\PublishProfiles\csharpproject %283%29.pubxml" />
+    <None Include="Properties\PublishProfiles\csharpproject %284%29.pubxml" />
+    <None Include="Properties\PublishProfiles\csharpproject %285%29.pubxml" />
+    <None Include="Properties\PublishProfiles\csharpproject %286%29.pubxml" />
+    <None Include="Properties\PublishProfiles\csharpproject.pubxml" />
     <None Include="scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="scripts\bootstrap.js" />
     <Content Include="scripts\bootstrap.min.js" />
@@ -163,6 +173,13 @@
     <Compile Include="BO\Room.cs" />
     <Compile Include="DA\AdminDatabaseAccess.cs" />
     <Compile Include="DA\StaffDataAccess.cs" />
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
     <Compile Include="web\Admin\AddNewHotel.aspx.cs">
       <DependentUpon>AddNewHotel.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -200,18 +217,18 @@
     </Compile>
     <Compile Include="BO\Account.cs" />
     <Compile Include="DA\DatabaseAccess.cs" />
-    <Compile Include="Customer.Master.cs">
+    <Compile Include="web\Customer\Customer.Master.cs">
       <DependentUpon>Customer.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Customer.Master.designer.cs">
+    <Compile Include="web\Customer\Customer.Master.designer.cs">
       <DependentUpon>Customer.Master</DependentUpon>
     </Compile>
-    <Compile Include="CustomerHome.aspx.cs">
+    <Compile Include="web\Customer\CustomerHome.aspx.cs">
       <DependentUpon>CustomerHome.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="CustomerHome.aspx.designer.cs">
+    <Compile Include="web\Customer\CustomerHome.aspx.designer.cs">
       <DependentUpon>CustomerHome.aspx</DependentUpon>
     </Compile>
     <Compile Include="web\Admin\UpdateRoomPrice.aspx.cs">
@@ -220,6 +237,13 @@
     </Compile>
     <Compile Include="web\Admin\UpdateRoomPrice.aspx.designer.cs">
       <DependentUpon>UpdateRoomPrice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\Customer\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\Customer\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
     <Compile Include="web\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -243,6 +267,13 @@
     </Compile>
     <Compile Include="web\Staff\AddCustomer.aspx.designer.cs">
       <DependentUpon>AddCustomer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\Staff\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\Staff\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
     <Compile Include="web\Staff\Print.aspx.cs">
       <DependentUpon>Print.aspx</DependentUpon>

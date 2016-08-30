@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Project
+namespace Project.web.Customer
 {
 
 
-    public partial class CustomerHome
+    public partial class Home
     {
     }
 }

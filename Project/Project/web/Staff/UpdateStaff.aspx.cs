@@ -12,6 +12,10 @@ namespace Project.web.Staff
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["role"] == null || (bool)Session["role"] != false)
+            {
+                Response.Redirect("../Login.aspx");
+            }
             txtUser.Enabled = false;
             txtUser.Text = Session["username"].ToString();
         }
@@ -34,6 +38,7 @@ namespace Project.web.Staff
             {
                 MessageBox.Show(this, "All field must not be empty");
             }
+            sda.close();
         }
     }
 }

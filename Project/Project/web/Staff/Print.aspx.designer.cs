@@ -49,21 +49,21 @@ namespace Project.web.Staff {
         protected global::System.Web.UI.WebControls.GridView GridView1;
         
         /// <summary>
-        /// lbRecords control.
+        /// txtChekOut control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbRecords;
+        protected global::System.Web.UI.WebControls.TextBox txtChekOut;
         
         /// <summary>
-        /// btnClose control.
+        /// btnCheckOut control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnClose;
+        protected global::System.Web.UI.WebControls.Button btnCheckOut;
     }
 }

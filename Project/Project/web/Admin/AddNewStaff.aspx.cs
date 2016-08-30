@@ -12,7 +12,10 @@ namespace Project.web.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["role"] == null || (bool)Session["role"] != true)
+            {
+                Response.Redirect("../Login.aspx");
+            }
         }
 
         protected void btnSave_Click(object sender, EventArgs e)
@@ -23,15 +26,17 @@ namespace Project.web.Admin
                 return;
             }
             Account a = new Account(txtUsername.Text, txtPassword.Text, rbAdmin.Checked);
+            AdminDatabaseAccess ada = new AdminDatabaseAccess();
             try
             {
-                AdminDatabaseAccess ada = new AdminDatabaseAccess();
                 ada.openConnection();
                 ada.AddNewLogin(a);
                 MessageBox.Show(this, "Success");
+                ada.close();
             } catch
             {
                 MessageBox.Show(this, "This account already exist");
+                ada.close();
             }
         }
     }

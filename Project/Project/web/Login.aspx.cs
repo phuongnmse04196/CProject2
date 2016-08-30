@@ -13,7 +13,8 @@ namespace Project
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            Session["username"] = null;
+            Session["role"] = null;
         }
         DatabaseAccess da = new DatabaseAccess();
         protected void Button1_Click(object sender, EventArgs e)
@@ -35,7 +36,7 @@ namespace Project
                 }
                 else
                 {
-                    Response.Redirect("Staff/StaffHome.aspx");
+                    Response.Redirect("Staff/Home.aspx");
                 }
             }
             else

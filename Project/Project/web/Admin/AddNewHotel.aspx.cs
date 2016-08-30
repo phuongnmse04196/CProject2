@@ -11,10 +11,13 @@ namespace Project.web.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["role"] == null || (bool) Session["role"] != true)
+            {
+                Response.Redirect("../Login.aspx");
+            }
         }
 
-        AdminDatabaseAccess adm = new AdminDatabaseAccess();
+        AdminDatabaseAccess ada = new AdminDatabaseAccess();
         protected void btnSave_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtName.Text) || string.IsNullOrEmpty(txtAddress.Text) || string.IsNullOrEmpty(txtCode.Text))
@@ -24,13 +27,15 @@ namespace Project.web.Admin
             }
             try
             {
-                adm.openConnection();
-                adm.AddNewHotel(txtCode.Text, txtName.Text, txtAddress.Text);
+                ada.openConnection();
+                ada.AddNewHotel(txtCode.Text, txtName.Text, txtAddress.Text);
                 MessageBox.Show(this, "Success");
+                ada.close();
             }
             catch
             {
                 MessageBox.Show(this, "This hotel code already exist");
+                ada.close();
             }
 
         }

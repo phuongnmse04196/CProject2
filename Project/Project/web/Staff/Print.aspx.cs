@@ -13,7 +13,18 @@ namespace Project.web.Staff
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["role"] == null || (bool)Session["role"] != false)
+            {
+                Response.Redirect("../Login.aspx");
+            }
+            if (IsPostBack)
+            {
+                StaffDataAccess sda = new StaffDataAccess();
+                sda.openConnection();
+                GridView1.DataSource = sda.getBooking(txtName.Text, txtDate.Text);
+                GridView1.DataBind();
+                sda.close();
+            }
         }
 
         protected void btnSearch_Click(object sender, EventArgs e)
@@ -22,11 +33,37 @@ namespace Project.web.Staff
             sda.openConnection();
             GridView1.DataSource = sda.getBooking(txtName.Text, txtDate.Text);
             GridView1.DataBind();
+            sda.close();
         }
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
             
+
+        }
+
+        protected void btnCheckOut_Click(object sender, EventArgs e)
+        {
+            if(string.IsNullOrEmpty(txtChekOut.Text))
+            {
+                MessageBox.Show(this, "You must input roomno!");
+                return;
+            }
+            StaffDataAccess sda = new StaffDataAccess();
+            sda.openConnection();
+            try
+            {
+                sda.Checkout(txtChekOut.Text);
+                MessageBox.Show(this, "Success!");
+                GridView1.DataSource = sda.getBooking(txtName.Text, txtDate.Text);
+                GridView1.DataBind();
+            } catch
+            {
+                MessageBox.Show(this, "Failed!");
+            } finally
+            {
+                sda.close();
+            }
 
         }
     }

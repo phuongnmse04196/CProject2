@@ -16,5 +16,14 @@ namespace Project
                "<script language='javascript'>alert('" + Message + "');</script>"
             );
         }
+
+        //public static bool Confirm(Page Page, String Message)
+        //{
+        //    Page.ClientScript.RegisterStartupScript(
+        //       Page.GetType(),
+        //       "MessageBox",
+        //       "<script language='javascript'>confirm('" + Message + "');</script>"
+        //    );
+        //}
     }
 }

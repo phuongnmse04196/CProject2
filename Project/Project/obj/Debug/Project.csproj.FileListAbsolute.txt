@@ -134,3 +134,36 @@ C:\Users\Recett\Documents\Visual Studio 2015\Projects\CProject2\trunk\Project\Pr
 C:\Users\Recett\Documents\Visual Studio 2015\Projects\CProject2\trunk\Project\Project\obj\Debug\Project.csprojResolveAssemblyReference.cache
 C:\Users\Recett\Documents\Visual Studio 2015\Projects\CProject2\trunk\Project\Project\obj\Debug\Project.dll
 C:\Users\Recett\Documents\Visual Studio 2015\Projects\CProject2\trunk\Project\Project\obj\Debug\Project.pdb
+F:\Project\trunk\Project\Project\bin\ApplicationInsights.config
+F:\Project\trunk\Project\Project\bin\Project.dll.config
+F:\Project\trunk\Project\Project\bin\Project.dll
+F:\Project\trunk\Project\Project\bin\Project.pdb
+F:\Project\trunk\Project\Project\bin\Microsoft.AI.Agent.Intercept.dll
+F:\Project\trunk\Project\Project\bin\Microsoft.AI.DependencyCollector.dll
+F:\Project\trunk\Project\Project\bin\Microsoft.AI.PerfCounterCollector.dll
+F:\Project\trunk\Project\Project\bin\Microsoft.AI.ServerTelemetryChannel.dll
+F:\Project\trunk\Project\Project\bin\Microsoft.AI.Web.dll
+F:\Project\trunk\Project\Project\bin\Microsoft.AI.WindowsServer.dll
+F:\Project\trunk\Project\Project\bin\Microsoft.ApplicationInsights.dll
+F:\Project\trunk\Project\Project\bin\Microsoft.Diagnostics.Tracing.EventSource.dll
+F:\Project\trunk\Project\Project\bin\Microsoft.Threading.Tasks.dll
+F:\Project\trunk\Project\Project\bin\Microsoft.Threading.Tasks.Extensions.Desktop.dll
+F:\Project\trunk\Project\Project\bin\Microsoft.Threading.Tasks.Extensions.dll
+F:\Project\trunk\Project\Project\bin\System.IO.dll
+F:\Project\trunk\Project\Project\bin\System.Runtime.dll
+F:\Project\trunk\Project\Project\bin\System.Threading.Tasks.dll
+F:\Project\trunk\Project\Project\bin\Microsoft.AI.DependencyCollector.xml
+F:\Project\trunk\Project\Project\bin\Microsoft.AI.ServerTelemetryChannel.xml
+F:\Project\trunk\Project\Project\bin\Microsoft.AI.Web.xml
+F:\Project\trunk\Project\Project\bin\Microsoft.AI.WindowsServer.xml
+F:\Project\trunk\Project\Project\bin\Microsoft.ApplicationInsights.xml
+F:\Project\trunk\Project\Project\bin\Microsoft.Diagnostics.Tracing.EventSource.xml
+F:\Project\trunk\Project\Project\bin\Microsoft.Threading.Tasks.xml
+F:\Project\trunk\Project\Project\bin\Microsoft.Threading.Tasks.Extensions.xml
+F:\Project\trunk\Project\Project\bin\Microsoft.Threading.Tasks.Extensions.Desktop.xml
+F:\Project\trunk\Project\Project\bin\System.IO.xml
+F:\Project\trunk\Project\Project\bin\System.Runtime.xml
+F:\Project\trunk\Project\Project\bin\System.Threading.Tasks.xml
+F:\Project\trunk\Project\Project\obj\Debug\Project.csproj.App.config
+F:\Project\trunk\Project\Project\obj\Debug\Project.dll
+F:\Project\trunk\Project\Project\obj\Debug\Project.pdb

@@ -12,7 +12,10 @@ namespace Project.web.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["role"] == null || (bool)Session["role"] != true)
+            {
+                Response.Redirect("../Login.aspx");
+            }
         }
         AdminDatabaseAccess ada = new AdminDatabaseAccess();
         protected void Button2_Click(object sender, EventArgs e)

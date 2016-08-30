@@ -15,6 +15,10 @@ namespace Project
         DataTable dt1;
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["role"] == null || (bool)Session["role"] != false)
+            {
+                Response.Redirect("../Login.aspx");
+            }
             Page.DataBind();
             GridView2.AutoGenerateColumns = true;
             txtName.Enabled = false;
@@ -35,20 +39,23 @@ namespace Project
                 SqlDataReader hotel = sda.getHotel();
                 while (hotel.Read())
                 {
-                    drHotel.Items.Add(new ListItem(hotel.GetString(1), hotel.GetString(2)));
+                    drHotel.Items.Add(new ListItem(hotel.GetString(1), hotel.GetString(0)));
                 }
+                hotel.Close();
                 SqlDataReader roomtype = sda.getRoomType();
                 while (roomtype.Read())
                 {
                     drRoomType.Items.Add(new ListItem((string)roomtype["TypeName"], ((int)roomtype["TypeCode"]).ToString()));
                 }
+                roomtype.Close();
             } else
             {
                 dt1 = (DataTable)ViewState["dt"];
                 GridView2.DataSource = dt1;
                 GridView2.DataBind();
             }
-            
+            sda.close();
+
         }
 
         protected void btnSearch_Click(object sender, EventArgs e)
@@ -59,6 +66,7 @@ namespace Project
             {
                 txtName.Text = sda.getCustomer(txtCode.Text);
             }
+            sda.close();
         }
 
         protected void btnCreate_Click(object sender, EventArgs e)
@@ -74,6 +82,7 @@ namespace Project
             ListBox1.DataValueField = "RoomNo";
             ListBox1.DataSource = sda.getARoom(drHotel.SelectedValue, drRoomType.SelectedValue, txtCheckIn.Text, txtCheckOut.Text);
             ListBox1.DataBind();
+            sda.close();
         }
 
         protected void btnBook_Click(object sender, EventArgs e)
@@ -86,12 +95,38 @@ namespace Project
                 MessageBox.Show(this, "Plese select room to book");
                 return;
             }
-            
-            DateTime checkin = DateTime.ParseExact(txtCheckIn.Text, "yyyyMMdd",
-                                       System.Globalization.CultureInfo.InvariantCulture);
-            DateTime checkout = DateTime.ParseExact(txtCheckOut.Text, "yyyyMMdd",
-                                       System.Globalization.CultureInfo.InvariantCulture);
-            
+
+            DateTime checkin = new DateTime();
+            try
+            {
+                //MessageBox.Show
+                //checkin = DateTime.ParseExact(txtCheckIn.Text, "dd-MM-yyyy",
+                //                       System.Globalization.CultureInfo.InvariantCulture);
+                checkin = DateTime.Parse(txtCheckIn.Text);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show(this, "Plese input the check in date!");
+                txtCheckIn.Focus();
+                return;
+
+            }
+            DateTime checkout = new DateTime();
+            try
+            {
+                //checkout = DateTime.ParseExact(txtCheckIn.Text, "dd/MM/yyyy",
+                //                       System.Globalization.CultureInfo.InvariantCulture);
+                checkout = DateTime.Parse(txtCheckOut.Text);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show(this, "Plese input the check out date!");
+                txtCheckOut.Focus();
+                return;
+
+            }
+
+
             TimeSpan night;
             night = checkout - checkin;
 
@@ -126,6 +161,7 @@ namespace Project
             ViewState["dt"] = dt1;
             GridView2.DataSource = dt1;
             GridView2.DataBind();
+            sda.close();
         }
 
         protected void btnSave_Click(object sender, EventArgs e)
@@ -140,6 +176,7 @@ namespace Project
                                            null);
                 sda.book(rows[0].ToString(), txtCode.Text, checkin, checkout);
             }
+            sda.close();
             Response.Redirect("Print.aspx");
         }
     }

@@ -11,7 +11,10 @@ namespace Project
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["role"] == null || (bool)Session["role"] != true)
+            {
+                Response.Redirect("../Login.aspx");
+            }
         }
     }
 }
