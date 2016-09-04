@@ -67,7 +67,7 @@ namespace Project.DA
             return dt;
         }
 
-        public string getCustomer (string code)
+        public string getCustomer(string code)
         {
             SqlCommand myCommand = new SqlCommand("Select Name from Customer where Code = @code", myConnection);
             myCommand.Parameters.Add("@code", SqlDbType.NChar);
@@ -75,18 +75,48 @@ namespace Project.DA
             return (string)myCommand.ExecuteScalar();
         }
 
-        public DataTable getARoom (string hotel, string roomtype, string checkin, string checkout)
+        public DataTable getARoom(string hotel, string roomtype, string checkin, string checkout)
         {
             DataTable dt = new DataTable();
-            string sql = "Select Roomno from room r where r.hotelcode = @hotel and r.typecode = @roomtype and r.busy = '0'";
+            string sql = "Select Roomno"
+            + "from room r"
+            + "where r.hotelcode = @hotel and r.typecode = @roomtype and r.busy = '0'"
+            + "and r.RoomNo not in"
+            + "(Select roomno from BookingDetail"
+            + "where(CAST(CheckoutDate as DATE) >= @checkin"
+            + "AND CAST(CheckinDate as DATE) <= @checkin)"
+            + "OR(CAST(CheckinDate as DATE) <= @checkout"
+            + "AND CAST(CheckoutDate as DATE) >= @checkout))";
             SqlDataAdapter sda = new SqlDataAdapter(sql, myConnection);
             sda.SelectCommand.Parameters.AddWithValue("@hotel", hotel);
             sda.SelectCommand.Parameters.AddWithValue("@roomtype", roomtype);
+            sda.SelectCommand.Parameters.AddWithValue("@checkin", checkin);
+            sda.SelectCommand.Parameters.AddWithValue("@checkout", checkout);
             sda.Fill(dt);
             return dt;
         }
 
-        public void book (string roomno, string customercode, DateTime checkin, DateTime checkout)
+        public DataTable Validate(string roomno, DateTime checkin, DateTime checkout)
+        {
+            DataTable dt = new DataTable();
+            string sql = "Select Roomno"
+            + "from room r"
+            + "where r.roomno = @roomno and r.busy = '0'"
+            + "and r.RoomNo not in"
+            + "(Select roomno from BookingDetail"
+            + "where(CAST(CheckoutDate as DATE) >= @checkin"
+            + "AND CAST(CheckinDate as DATE) <= @checkin)"
+            + "OR(CAST(CheckinDate as DATE) <= @checkout"
+            + "AND CAST(CheckoutDate as DATE) >= @checkout))";
+            SqlDataAdapter sda = new SqlDataAdapter(sql, myConnection);
+            sda.SelectCommand.Parameters.AddWithValue("@roomno", roomno);
+            sda.SelectCommand.Parameters.AddWithValue("@checkin", checkin);
+            sda.SelectCommand.Parameters.AddWithValue("@checkout", checkout);
+            sda.Fill(dt);
+            return dt;
+        }
+
+        public void book(string roomno, string customercode, DateTime checkin, DateTime checkout)
         {
             DateTime date = DateTime.Now;
             string date2 = date.Year.ToString() + date.Month.ToString() + date.Day.ToString();
@@ -104,9 +134,6 @@ namespace Project.DA
             command.Parameters.AddWithValue("@checkin", checkin);
             command.Parameters.AddWithValue("@checkout", checkout);
             command.Parameters.AddWithValue("@price", price);
-            command.ExecuteNonQuery();
-            command = new SqlCommand("Update Room set busy = '1' where roomno = @roomno", myConnection);
-            command.Parameters.AddWithValue("@roomno", roomno);
             command.ExecuteNonQuery();
         }
         public void Checkout(string roomno)
