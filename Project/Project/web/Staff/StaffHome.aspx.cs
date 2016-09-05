@@ -117,11 +117,11 @@ namespace Project
                 txtCheckOut.Focus();
                 return;
             }
-            if (dt1.Rows.Count != 0)
-            {
-                MessageBox.Show(this, "Please save before making furthur booking");
-                return;
-            }
+            //if (dt1.Rows.Count != 0)
+            //{
+            //    MessageBox.Show(this, "Please save before making furthur booking");
+            //    return;
+            //}
             if (checkin < DateTime.Today)
             {
                 MessageBox.Show(this, "Invalid Check in date");
@@ -162,14 +162,14 @@ namespace Project
             }
             if (!flag)
             {
-                //DataRow newRows = dt1.NewRow();
-                //newRows[0] = ListBox1.Text;
-                //newRows[1] = x;
-                //newRows[2] = checkin.Day + "/" + checkin.Month + "/" + checkin.Year;
-                //newRows[3] = checkout.Day + "/" + checkout.Month + "/" + checkout.Year;
-                //newRows[4] = night2;
-                //newRows[5] = night2 * x1;
-                //dt1.Rows.Add(newRows);
+                DataRow newRows = dt1.NewRow();
+                newRows[0] = ListBox1.Text;
+                newRows[1] = x;
+                newRows[2] = checkin.Day + "/" + checkin.Month + "/" + checkin.Year;
+                newRows[3] = checkout.Day + "/" + checkout.Month + "/" + checkout.Year;
+                newRows[4] = night2;
+                newRows[5] = night2 * x1;
+                dt1.Rows.Add(newRows);
             }
             ViewState["dt"] = dt1;
             GridView2.DataSource = dt1;
@@ -183,22 +183,13 @@ namespace Project
             sda.openConnection();
             foreach (DataRow rows in dt1.Rows)
             {
-                DateTime checkin = DateTime.ParseExact(rows[2].ToString(), "dd/M/yyyy",
-                                       null);
-                DateTime checkout = DateTime.ParseExact(rows[3].ToString(), "dd/M/yyyy",
-                                           null);
-                if (checkin < DateTime.Today)
-                {
-                    MessageBox.Show(this, "Invalid Check in date");
-                    dt1.Clear();
-                    return;
-                }
-                if (checkout < DateTime.Today)
-                {
-                    MessageBox.Show(this, "Invalid Check out date");
-                    dt1.Clear();
-                    return;
-                }
+                //DateTime checkin = DateTime.ParseExact(rows[2].ToString(), "dd/M/yyyy",
+                //                       null);
+                //DateTime checkout = DateTime.ParseExact(rows[3].ToString(), "dd/M/yyyy",
+                //                           null);
+                DateTime checkin = DateTime.Parse(rows[2].ToString());
+                DateTime checkout = DateTime.Parse(rows[3].ToString());
+
                 DataTable dt2 = sda.Validate(rows[0].ToString(), checkin, checkout);
                 if (dt2.Rows.Count == 0)
                 {

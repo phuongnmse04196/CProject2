@@ -167,3 +167,4 @@ F:\Project\trunk\Project\Project\bin\System.Threading.Tasks.xml
 F:\Project\trunk\Project\Project\obj\Debug\Project.csproj.App.config
 F:\Project\trunk\Project\Project\obj\Debug\Project.dll
 F:\Project\trunk\Project\Project\obj\Debug\Project.pdb
+F:\Project\trunk\Project\Project\obj\Debug\Project.csprojResolveAssemblyReference.cache

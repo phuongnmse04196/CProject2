@@ -35,7 +35,7 @@ namespace Project
                 SqlDataReader hotel = sda.getHotel();
                 while (hotel.Read())
                 {
-                    drHotel.Items.Add(new ListItem(hotel.GetString(1), hotel.GetString(2)));
+                    drHotel.Items.Add(new ListItem(hotel.GetString(1), hotel.GetString(0)));
                 }
                 hotel.Close();
                 SqlDataReader roomtype = sda.getRoomType();
@@ -71,6 +71,7 @@ namespace Project
         {
             StaffDataAccess sda = new StaffDataAccess();
             sda.openConnection();
+            
             ListBox1.DataTextField = "RoomNo";
             ListBox1.DataValueField = "RoomNo";
             ListBox1.DataSource = sda.getARoom(drHotel.SelectedValue, drRoomType.SelectedValue, txtCheckIn.Text, txtCheckOut.Text);
@@ -119,6 +120,30 @@ namespace Project
 
             }
 
+            //if (dt1.Rows.Count != 0)
+            //{
+            //    MessageBox.Show(this, "Please save before making furthur booking");
+            //    return;
+            //}
+            if (checkin < DateTime.Today)
+            {
+                MessageBox.Show(this, "Invalid Check in date");
+                dt1.Clear();
+                return;
+            }
+            if (checkout < DateTime.Today)
+            {
+                MessageBox.Show(this, "Invalid Check out date");
+                dt1.Clear();
+                return;
+            }
+            DataTable dt2 = sda.Validate(ListBox1.Text.Trim(), checkin, checkout);
+            if (dt2.Rows.Count == 0)
+            {
+                MessageBox.Show(this, "This room is occupied");
+                return;
+            }
+
             TimeSpan night;
             night = checkout - checkin;
 
@@ -159,17 +184,35 @@ namespace Project
         protected void btnSave_Click(object sender, EventArgs e)
         {
             StaffDataAccess sda = new StaffDataAccess();
-            sda.openConnection();
-            foreach (DataRow rows in dt1.Rows)
+            try
             {
-                DateTime checkin = DateTime.ParseExact(rows[2].ToString(), "dd/M/yyyy",
-                                       null);
-                DateTime checkout = DateTime.ParseExact(rows[3].ToString(), "dd/M/yyyy",
-                                           null);
-                sda.book(rows[0].ToString(), txtCode.Text, checkin, checkout);
+                sda.openConnection();
+                foreach (DataRow rows in dt1.Rows)
+                {
+                    //DateTime checkin = DateTime.ParseExact(rows[2].ToString(), "dd/M/yyyy",
+                    //                       null);
+                    //DateTime checkout = DateTime.ParseExact(rows[3].ToString(), "dd/M/yyyy",
+                    //                           null);
+                    DateTime checkin = DateTime.Parse(rows[2].ToString());
+                    DateTime checkout = DateTime.Parse(rows[3].ToString());
+                    DataTable dt2 = sda.Validate(rows[0].ToString(), checkin, checkout);
+                    if (dt2.Rows.Count == 0)
+                    {
+                        MessageBox.Show(this, "This room is occupied");
+                        return;
+                    }
+                    sda.book(rows[0].ToString(), txtCode.Text, checkin, checkout);
+                }
+                MessageBox.Show(this, "Success!");
             }
-            sda.close();
-            MessageBox.Show(this, "Success!");
+            catch (Exception)
+            {
+                MessageBox.Show(this, "Failed!");
+            }
+            finally
+            {
+                sda.close();
+            }
             Response.Redirect("Home.aspx");
 
         }

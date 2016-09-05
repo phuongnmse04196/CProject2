@@ -55,8 +55,6 @@
 
             <!-- Header -->
             <header class="w3-container" style="background-color: black; height: 100px">
-                <a href="#">
-                    <img src="img_avatar_g2.jpg" style="width: 65px;" class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity" /></a>
                 <span class="w3-opennav w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="w3_open()"><i class="fa fa-bars"></i></span>
                 <h1 style="text-align: center; color: aliceblue"><b>MANAGE HOTEL</b></h1>
 

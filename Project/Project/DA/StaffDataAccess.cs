@@ -78,15 +78,15 @@ namespace Project.DA
         public DataTable getARoom(string hotel, string roomtype, string checkin, string checkout)
         {
             DataTable dt = new DataTable();
-            string sql = "Select Roomno"
-            + "from room r"
-            + "where r.hotelcode = @hotel and r.typecode = @roomtype and r.busy = '0'"
-            + "and r.RoomNo not in"
-            + "(Select roomno from BookingDetail"
-            + "where(CAST(CheckoutDate as DATE) >= @checkin"
-            + "AND CAST(CheckinDate as DATE) <= @checkin)"
-            + "OR(CAST(CheckinDate as DATE) <= @checkout"
-            + "AND CAST(CheckoutDate as DATE) >= @checkout))";
+            string sql = "Select Roomno "
+            + " from room r "
+            + " where r.hotelcode = @hotel and r.typecode = @roomtype and r.busy = '0' "
+            + " and r.RoomNo not in "
+            + " (Select roomno from BookingDetail "
+            + " where(CAST(CheckoutDate as DATE) >= @checkin "
+            + " AND CAST(CheckinDate as DATE) <= @checkin) "
+            + " OR(CAST(CheckinDate as DATE) <= @checkout "
+            + " AND CAST(CheckoutDate as DATE) >= @checkout)) ";
             SqlDataAdapter sda = new SqlDataAdapter(sql, myConnection);
             sda.SelectCommand.Parameters.AddWithValue("@hotel", hotel);
             sda.SelectCommand.Parameters.AddWithValue("@roomtype", roomtype);
@@ -99,15 +99,15 @@ namespace Project.DA
         public DataTable Validate(string roomno, DateTime checkin, DateTime checkout)
         {
             DataTable dt = new DataTable();
-            string sql = "Select Roomno"
-            + "from room r"
-            + "where r.roomno = @roomno and r.busy = '0'"
-            + "and r.RoomNo not in"
-            + "(Select roomno from BookingDetail"
-            + "where(CAST(CheckoutDate as DATE) >= @checkin"
-            + "AND CAST(CheckinDate as DATE) <= @checkin)"
-            + "OR(CAST(CheckinDate as DATE) <= @checkout"
-            + "AND CAST(CheckoutDate as DATE) >= @checkout))";
+            string sql = "Select Roomno "
+            + " from room r "
+            + " where r.roomno = @roomno and r.busy = '0' "
+            + " and r.RoomNo not in "
+            + " (Select roomno from BookingDetail "
+            + " where(CAST(CheckoutDate as DATE) >= @checkin "
+            + " AND CAST(CheckinDate as DATE) <= @checkin) "
+            + " OR(CAST(CheckinDate as DATE) <= @checkout "
+            + " AND CAST(CheckoutDate as DATE) >= @checkout)) ";
             SqlDataAdapter sda = new SqlDataAdapter(sql, myConnection);
             sda.SelectCommand.Parameters.AddWithValue("@roomno", roomno);
             sda.SelectCommand.Parameters.AddWithValue("@checkin", checkin);
