@@ -41,7 +41,6 @@ namespace Project.web.Admin
             {
                 ada.GetRoom1(null, -1);
             }
-            ada.close();
         }
 
         protected void drHotel_SelectedIndexChanged(object sender, EventArgs e)

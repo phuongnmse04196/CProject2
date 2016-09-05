@@ -34,7 +34,6 @@ namespace Project.web.Admin
                 }
                 roomtype.Close();
             }
-            ada.close();
         }
 
         protected void btnSave_Click(object sender, EventArgs e)

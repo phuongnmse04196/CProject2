@@ -36,7 +36,6 @@ namespace Project.web.Staff
             {
                 MessageBox.Show(this, "Customer already exist");
             }
-            sda.close();
         }
     }
 }

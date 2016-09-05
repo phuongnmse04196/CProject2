@@ -48,9 +48,7 @@ namespace Project.web.Admin
                 dt = ada.Print(drHotel.SelectedValue, a, txtCheckIn.Text, txtCheckOut.Text);
                 GridView1.DataSource = dt;
                 GridView1.DataBind();
-                ada1.close();
             }
-            ada.close();
         }
 
         protected void btnView_Click(object sender, EventArgs e)

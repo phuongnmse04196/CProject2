@@ -23,7 +23,6 @@ namespace Project.web.Staff
                 sda.openConnection();
                 GridView1.DataSource = sda.getBooking(txtName.Text, txtDate.Text);
                 GridView1.DataBind();
-                sda.close();
             }
         }
 
@@ -33,7 +32,6 @@ namespace Project.web.Staff
             sda.openConnection();
             GridView1.DataSource = sda.getBooking(txtName.Text, txtDate.Text);
             GridView1.DataBind();
-            sda.close();
         }
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
@@ -60,11 +58,7 @@ namespace Project.web.Staff
             } catch
             {
                 MessageBox.Show(this, "Failed!");
-            } finally
-            {
-                sda.close();
             }
-
         }
     }
 }

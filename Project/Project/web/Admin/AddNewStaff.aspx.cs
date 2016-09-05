@@ -32,11 +32,9 @@ namespace Project.web.Admin
                 ada.openConnection();
                 ada.AddNewLogin(a);
                 MessageBox.Show(this, "Success");
-                ada.close();
             } catch
             {
                 MessageBox.Show(this, "This account already exist");
-                ada.close();
             }
         }
     }

@@ -54,7 +54,6 @@ namespace Project
                 GridView2.DataSource = dt1;
                 GridView2.DataBind();
             }
-            sda.close();
         }
 
         protected void btnSearch_Click(object sender, EventArgs e)
@@ -65,7 +64,6 @@ namespace Project
             {
                 txtName.Text = sda.getCustomer(txtCode.Text);
             }
-            sda.close();
         }
 
         protected void btnCreate_Click(object sender, EventArgs e)
@@ -81,7 +79,6 @@ namespace Project
             ListBox1.DataValueField = "RoomNo";
             ListBox1.DataSource = sda.getARoom(drHotel.SelectedValue, drRoomType.SelectedValue, txtCheckIn.Text, txtCheckOut.Text);
             ListBox1.DataBind();
-            sda.close();
         }
 
         protected void btnBook_Click(object sender, EventArgs e)
@@ -174,7 +171,6 @@ namespace Project
             ViewState["dt"] = dt1;
             GridView2.DataSource = dt1;
             GridView2.DataBind();
-            sda.close();
         }
 
         protected void btnSave_Click(object sender, EventArgs e)
@@ -198,7 +194,6 @@ namespace Project
                 }
                 sda.book(rows[0].ToString(), txtCode.Text, checkin, checkout);
             }
-            sda.close();
             Response.Redirect("Print.aspx");
         }
     }

@@ -168,3 +168,37 @@ F:\Project\trunk\Project\Project\obj\Debug\Project.csproj.App.config
 F:\Project\trunk\Project\Project\obj\Debug\Project.dll
 F:\Project\trunk\Project\Project\obj\Debug\Project.pdb
 F:\Project\trunk\Project\Project\obj\Debug\Project.csprojResolveAssemblyReference.cache
+C:\Users\Recett\Documents\Visual Studio 2015\Projects\F\trunk\Project\Project\bin\ApplicationInsights.config
+C:\Users\Recett\Documents\Visual Studio 2015\Projects\F\trunk\Project\Project\bin\Project.dll.config
+C:\Users\Recett\Documents\Visual Studio 2015\Projects\F\trunk\Project\Project\bin\Project.dll
+C:\Users\Recett\Documents\Visual Studio 2015\Projects\F\trunk\Project\Project\bin\Project.pdb
+C:\Users\Recett\Documents\Visual Studio 2015\Projects\F\trunk\Project\Project\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\Recett\Documents\Visual Studio 2015\Projects\F\trunk\Project\Project\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\Recett\Documents\Visual Studio 2015\Projects\F\trunk\Project\Project\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\Recett\Documents\Visual Studio 2015\Projects\F\trunk\Project\Project\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\Recett\Documents\Visual Studio 2015\Projects\F\trunk\Project\Project\bin\Microsoft.AI.Web.dll
+C:\Users\Recett\Documents\Visual Studio 2015\Projects\F\trunk\Project\Project\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\Recett\Documents\Visual Studio 2015\Projects\F\trunk\Project\Project\bin\Microsoft.ApplicationInsights.dll
+C:\Users\Recett\Documents\Visual Studio 2015\Projects\F\trunk\Project\Project\bin\Microsoft.Diagnostics.Tracing.EventSource.dll
+C:\Users\Recett\Documents\Visual Studio 2015\Projects\F\trunk\Project\Project\bin\Microsoft.Threading.Tasks.dll
+C:\Users\Recett\Documents\Visual Studio 2015\Projects\F\trunk\Project\Project\bin\Microsoft.Threading.Tasks.Extensions.Desktop.dll
+C:\Users\Recett\Documents\Visual Studio 2015\Projects\F\trunk\Project\Project\bin\Microsoft.Threading.Tasks.Extensions.dll
+C:\Users\Recett\Documents\Visual Studio 2015\Projects\F\trunk\Project\Project\bin\System.IO.dll
+C:\Users\Recett\Documents\Visual Studio 2015\Projects\F\trunk\Project\Project\bin\System.Runtime.dll
+C:\Users\Recett\Documents\Visual Studio 2015\Projects\F\trunk\Project\Project\bin\System.Threading.Tasks.dll
+C:\Users\Recett\Documents\Visual Studio 2015\Projects\F\trunk\Project\Project\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\Recett\Documents\Visual Studio 2015\Projects\F\trunk\Project\Project\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\Recett\Documents\Visual Studio 2015\Projects\F\trunk\Project\Project\bin\Microsoft.AI.Web.xml
+C:\Users\Recett\Documents\Visual Studio 2015\Projects\F\trunk\Project\Project\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\Recett\Documents\Visual Studio 2015\Projects\F\trunk\Project\Project\bin\Microsoft.ApplicationInsights.xml
+C:\Users\Recett\Documents\Visual Studio 2015\Projects\F\trunk\Project\Project\bin\Microsoft.Diagnostics.Tracing.EventSource.xml
+C:\Users\Recett\Documents\Visual Studio 2015\Projects\F\trunk\Project\Project\bin\Microsoft.Threading.Tasks.xml
+C:\Users\Recett\Documents\Visual Studio 2015\Projects\F\trunk\Project\Project\bin\Microsoft.Threading.Tasks.Extensions.xml
+C:\Users\Recett\Documents\Visual Studio 2015\Projects\F\trunk\Project\Project\bin\Microsoft.Threading.Tasks.Extensions.Desktop.xml
+C:\Users\Recett\Documents\Visual Studio 2015\Projects\F\trunk\Project\Project\bin\System.IO.xml
+C:\Users\Recett\Documents\Visual Studio 2015\Projects\F\trunk\Project\Project\bin\System.Runtime.xml
+C:\Users\Recett\Documents\Visual Studio 2015\Projects\F\trunk\Project\Project\bin\System.Threading.Tasks.xml
+C:\Users\Recett\Documents\Visual Studio 2015\Projects\F\trunk\Project\Project\obj\Debug\Project.csproj.App.config
+C:\Users\Recett\Documents\Visual Studio 2015\Projects\F\trunk\Project\Project\obj\Debug\Project.csprojResolveAssemblyReference.cache
+C:\Users\Recett\Documents\Visual Studio 2015\Projects\F\trunk\Project\Project\obj\Debug\Project.dll
+C:\Users\Recett\Documents\Visual Studio 2015\Projects\F\trunk\Project\Project\obj\Debug\Project.pdb

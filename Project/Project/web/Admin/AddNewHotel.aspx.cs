@@ -30,12 +30,10 @@ namespace Project.web.Admin
                 ada.openConnection();
                 ada.AddNewHotel(txtCode.Text, txtName.Text, txtAddress.Text);
                 MessageBox.Show(this, "Success");
-                ada.close();
             }
             catch
             {
                 MessageBox.Show(this, "This hotel code already exist");
-                ada.close();
             }
 
         }
